@@ -38,7 +38,7 @@ class Persona():
     def dni(self):
         return self.__dni
     @dni.setter
-    def cargardni(self,nuevo_dni):
+    def dni(self,nuevo_dni):
         self.__dni = nuevo_dni
 
     def mostrar(self):
@@ -49,10 +49,36 @@ class Persona():
         else:
             print("{} {} es menor de edad".format(self.__nombre,self.__apellido))
             
-nueva_persona = Persona()
-nueva_persona.nombre = 'Cristian'
-nueva_persona.apellido = 'Aranda'
-nueva_persona.edad = '17'
-nueva_persona.dni = '34156156'
-nueva_persona.mostrar()
-nueva_persona.es_mayor_de_edad()
+            
+class Cuenta(Persona):
+    def __init__(self):
+        super().__init__()
+        self.__cantidad = 0.0
+    @property
+    def cantidad(self):
+        return self.__cantidad
+# @cantidad.setter
+# def cantidad(self,nuevo_cantidad):
+#     self.__cantidad = self.__cantidad + nuevo_cantidad
+    def ingresar(self,cantidad):
+        self.__cantidad = self.__cantidad + cantidad
+        print("Usted a ingresado ${}".format(cantidad))   
+    def retirar(self,cantidad):
+        self.__cantidad = self.__cantidad - cantidad
+        print("Usted a retirado ${}".format(cantidad))   
+    def mostrar(self):
+        Persona.mostrar(self)
+        # print(" Cliente{} {} con DNI: {}".format(super().__nombre,super().__apellido,super().__dni))   
+        print("Su saldo en cuenta es de ${}".format(self.__cantidad)) 
+        
+
+Cliente1Cuenta = Cuenta()
+Cliente1Cuenta.nombre = 'Bob'
+Cliente1Cuenta.apellido = 'Patino'
+Cliente1Cuenta.edad = '45'
+Cliente1Cuenta.dni = '34156156'
+Cliente1Cuenta.ingresar(5.5)
+Cliente1Cuenta.retirar(2)
+Cliente1Cuenta.mostrar()
+Cliente1Cuenta.es_mayor_de_edad()
+
