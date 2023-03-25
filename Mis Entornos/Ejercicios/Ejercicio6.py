@@ -38,7 +38,7 @@ class Persona():
     def dni(self):
         return self.__dni
     @dni.setter
-    def cargardni(self,nuevo_dni):
+    def dni(self,nuevo_dni):
         self.__dni = nuevo_dni
 
     def mostrar(self):
@@ -49,10 +49,10 @@ class Persona():
         else:
             print("{} {} es menor de edad".format(self.__nombre,self.__apellido))
             
-nueva_persona = Persona()
-nueva_persona.nombre = 'Cristian'
-nueva_persona.apellido = 'Aranda'
-nueva_persona.edad = '17'
-nueva_persona.dni = '34156156'
-nueva_persona.mostrar()
-nueva_persona.es_mayor_de_edad()
+# nueva_persona = Persona()
+# nueva_persona.nombre = 'Cristian'
+# nueva_persona.apellido = 'Aranda'
+# nueva_persona.edad = '17'
+# nueva_persona.dni = '34156156'
+# nueva_persona.mostrar()
+# nueva_persona.es_mayor_de_edad()
