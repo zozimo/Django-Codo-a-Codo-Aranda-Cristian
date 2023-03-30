@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {% include 'superior/barra.html' %}
+        <ul>
+            {% if temas_curso %}
+                {% for tema in temas_curso %}
+                    <li>{{tema}}</li>
+                {% endfor %}
+            {% else %}  
+                <p>No hay temas que mostrar</p>
+            {% endif %}
+        </ul>
+    </div>
+    <!-- aplicacion de filtros -->
+    {% if temas_curso %}
+        {% for tema in temas_curso %}
+                <!-- {% comment %}
+                {{ variable|filtro1|filtro2|...|filtron }}
+                {% endcomment %} -->
+            <li>{{ tema|first|lower }}</li>
+        {% endfor %}
+    {% else %}
+        <p>No hay temas que mostrar</p>
+    {% endif %}
+    
+    
+</body>
+</html>
